@@ -1,9 +1,11 @@
 import React from "react";
+import TechMaksa from "../tech-maksa/TechMaksa";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
-    <div className="bg-red-500">
-      <p>Welcome home!</p>
-    </div>
+    <Box>
+      <TechMaksa />
+    </Box>
   );
 }
