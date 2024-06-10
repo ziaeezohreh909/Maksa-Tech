@@ -3,36 +3,50 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
-import { CategoriesType } from "./CategoryBox";
+import { Box, CardActionArea } from "@mui/material";
+import Link from "next/link";
 
-export default function CategoryCard({
-  category,
-}: {
-  category: CategoriesType;
-}) {
+interface CategoriesType {
+  id?: number;
+  image?: string;
+  title?: string;
+}
+
+export default function CategoryCard({ image, title }: CategoriesType) {
   return (
-    <Card sx={{ width: "148px", height: "180px" }}>
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+        maxWidth: 190,
+        minWidth: 184,
+        m: 1,
+        width: 184,
+        height: 200,
+        maxHeight: 200,
+        px: 3,
+      }}
+    >
       <CardActionArea>
-        <CardMedia
-          component="img"
-          sx={{ width: "148px", height: "148px", padding: 1 }}
-          image={category.image}
-          alt="category"
-        />
+        <CardMedia component="img" image={image} alt="category" />
         <CardContent>
+          {/* <Link href={"/"}> */}
           <Typography
             gutterBottom
             variant="body1"
-            component="p"
+            component="h6"
+            color="GrayText"
             sx={{
-              fontSize: "10px",
+              fontSize: 13,
               textAlign: "center",
               ":hover": { textDecoration: "underline" },
             }}
           >
-            {category.title}
+            {title}
           </Typography>
+          {/* </Link> */}
         </CardContent>
       </CardActionArea>
     </Card>

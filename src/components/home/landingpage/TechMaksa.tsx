@@ -1,6 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import Image from "next/image";
-import CategoryBox from "../card-category/CategoryBox";
+import CategoryBox from "../../card-category/CategoryBox";
 
 export default function TechMaksa() {
   return (
@@ -12,22 +12,17 @@ export default function TechMaksa() {
         width: "100vw",
       }}
     >
-      <Box
-        sx={{
-          width: "55vw",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <Box>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
             padding: 2,
             margin: 2,
+            flexDirection: "row",
           }}
         >
-          <Box sx={{px:5}}>
+          <Box sx={{ px: 5 }}>
             <Typography variant="h4" component="h5" gutterBottom>
               Tech Heim
             </Typography>
@@ -39,9 +34,10 @@ export default function TechMaksa() {
               variant="contained"
               size="large"
               sx={{
+                display: "flex",
+                alignItems: "center",
                 backgroundColor: "#f44336",
-                py: 2,
-                my: 4,
+                my: 10,
                 ":hover": {
                   backgroundColor: "#f44336",
                 },
@@ -50,7 +46,12 @@ export default function TechMaksa() {
               Explore More
             </Button>
           </Box>
-          <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
             <Image
               src="/images/maksatech.png"
               alt="techmaksa for landing page"
