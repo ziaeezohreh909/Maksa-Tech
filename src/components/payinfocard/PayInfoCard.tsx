@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export default function PayInfoCard() {
   return (
-    <>
+    <Card>
       <CardContent
         sx={{
           width: "312px",
@@ -100,6 +100,7 @@ export default function PayInfoCard() {
               width: "60px",
               height: "51px",
               fontSize: "12px",
+              textTransform: "none",
               "&:hover": {
                 pointerEvents: "none",
               },
@@ -116,6 +117,7 @@ export default function PayInfoCard() {
               width: "60px",
               height: "51px",
               fontSize: "12px",
+              textTransform: "none",
             }}
           >
             6 Months
@@ -129,6 +131,7 @@ export default function PayInfoCard() {
               width: "60px",
               height: "51px",
               fontSize: "12px",
+              textTransform: "none",
             }}
           >
             12 Months
@@ -142,6 +145,7 @@ export default function PayInfoCard() {
               width: "60px",
               height: "51px",
               fontSize: "12px",
+              textTransform: "none",
             }}
           >
             18 Months
@@ -150,18 +154,23 @@ export default function PayInfoCard() {
         <Button
           variant="contained"
           fullWidth
-          sx={{ height: "48px", borderRadius: "10px" }}
+          sx={{ height: "48px", borderRadius: "10px", textTransform: "none" }}
         >
           Buy Now
         </Button>
         <Button
           variant="outlined"
           fullWidth
-          sx={{ height: "48px", borderRadius: "10px", borderColor: "blue" }}
+          sx={{
+            height: "48px",
+            borderRadius: "10px",
+            borderColor: "blue",
+            textTransform: "none",
+          }}
         >
           Add to cart
         </Button>
       </CardContent>
-    </>
+    </Card>
   );
 }
