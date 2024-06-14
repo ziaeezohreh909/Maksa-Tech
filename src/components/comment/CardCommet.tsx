@@ -4,12 +4,17 @@ import Image from "next/image";
 import React from "react";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
+import { commentType } from "./api";
 
-const CardCommet = () => {
+interface CardCommetProps {
+  comment: commentType;
+}
+
+const CardCommet: React.FC<CardCommetProps> = ({ comment }) => {
   return (
     <Card sx={{ width: "100%", p: 1 }}>
       <Box sx={{ display: "flex", gap: 2, width: "100%" }}>
-        <Image src="/images/user.png" alt="user" width={60} height={60} />
+        <Image src={comment.avatar} alt="user" width={60} height={60} />
         <Box
           sx={{
             display: "flex",
@@ -20,21 +25,13 @@ const CardCommet = () => {
           }}
         >
           <Typography>
-            Jimmy Smith <br /> May 28, 2023
+            {comment.name} <br /> {new Date().toLocaleDateString()}
           </Typography>
           <Image src="/images/ratestar.png" alt="user" width={70} height={32} />
         </Box>
       </Box>
       <Box sx={{ mt: 2 }}>
-        <Typography variant="body1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-          nesciunt repellat laboriosam at veritatis molestiae consectetur.
-          Laboriosam odio et quasi, quisquam cupiditate itaque eius delectus
-          nesciunt odit autem. Aperiam, corporis?Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Repudiandae hic voluptas nobis expedita
-          nisi. Repudiandae necessitatibus minus id pariatur dolor laudantium.
-          Facere iste veniam quasi sequi ut sed similique accusamus...
-        </Typography>
+        <Typography variant="body1">{comment.comment}</Typography>
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Button
             variant="text"

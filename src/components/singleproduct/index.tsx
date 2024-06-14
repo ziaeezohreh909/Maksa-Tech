@@ -18,7 +18,7 @@ export default function SingleProduct() {
         <Box sx={{ width: "343px", height: "365px" }}>information</Box>
         <PayInfoCard />
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "row", gap: 2,mt:3 }}>
+      <Box sx={{ display: "flex", flexDirection: "row", gap: 2, mt: 3 }}>
         <CommentSide />
         <Comments />
       </Box>
